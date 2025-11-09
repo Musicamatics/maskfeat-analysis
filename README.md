@@ -1,33 +1,18 @@
-# MaskFeat Training Analysis - GitHub Pages Deployment
+# MaskFeat Training Analysis
 
 This repository contains interactive visualizations of MaskFeat model training performance across different configurations.
 
 ## 🌐 Live Demo
 
-Once deployed, your dashboard will be available at:
-```
-https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/
-```
+View the dashboard at: [https://musicamatics.github.io/maskfeat-analysis/](https://musicamatics.github.io/maskfeat-analysis/)
 
 ## 📁 Files Included
 
-### HTML Pages
 - `index.html` - Main dashboard landing page
-- `1_old_run_20warmup_bs128_interactive.html` - Chart 1: Old run baseline
-- `2_old_run_20warmup_bs128_extended_ep100_interactive.html` - Chart 2: Old run extended to epoch 100
-- `3_new_run_5warmup_bs512_interactive.html` - Chart 3: New optimized run
-- `4_comparison_old_vs_new_runs_interactive.html` - Chart 4: Side-by-side comparison
-
-### High-Resolution Exports
-- PNG files (2800×1800 pixels) for all 4 charts
-- SVG files (vector graphics) for all 4 charts
-- Embed HTML files for integrating charts into other websites
-
-### Python Scripts
-- `training-validation-chart.py` - Generates Chart 1
-- `training_validation_chart_updated.py` - Generates Chart 2
-- `training_validation_chart_5epoch.py` - Generates Chart 3
-- `training_validation_chart_comparison.py` - Generates Chart 4
+- `1_old_run_20warmup_bs128_interactive.html` - Chart 1: Baseline configuration
+- `2_old_run_20warmup_bs128_extended_ep100_interactive.html` - Chart 2: Extended training run
+- `3_new_run_5warmup_bs512_interactive.html` - Chart 3: Optimized configuration
+- `4_comparison_old_vs_new_runs_interactive.html` - Chart 4: Comparative analysis
 
 ## 🚀 Quick Deployment to GitHub Pages
 
