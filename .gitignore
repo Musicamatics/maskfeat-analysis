@@ -23,5 +23,10 @@ Thumbs.db
 backup_*.sh
 email_monitor_*.sh
 
+# Local exports (keep locally, don't sync to GitHub)
+*.png
+*.svg
+*_embed.html
+
 # Keep only the necessary files for GitHub Pages
-# HTML, PNG, SVG files are tracked
+# Only *_interactive.html files are tracked
