@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaskFeat Training Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #f5f7fa;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+        }
+        
+        header {
+            background: #1a1a2e;
+            color: white;
+            padding: 60px 40px;
+            border-bottom: 4px solid #0f3460;
+        }
+        
+        header h1 {
+            font-size: 2.8em;
+            margin-bottom: 12px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+        
+        header p {
+            font-size: 1.15em;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+        
+        .content {
+            padding: 60px 40px;
+        }
+        
+        .intro {
+            background: #ffffff;
+            padding: 40px;
+            margin-bottom: 50px;
+            border: 1px solid #e1e8ed;
+            border-left: 4px solid #0f3460;
+        }
+        
+        .intro h2 {
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+        
+        .intro p {
+            color: #5a6c7d;
+            font-size: 1.05em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .intro strong {
+            color: #0f3460;
+        }
+        
+        .charts-section h2 {
+            color: #1a1a2e;
+            margin-bottom: 35px;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+        
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .chart-card {
+            background: white;
+            border: 1px solid #e1e8ed;
+            padding: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            position: relative;
+        }
+        
+        .chart-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            border-color: #0f3460;
+        }
+        
+        .chart-card h3 {
+            color: #1a1a2e;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            font-weight: 600;
+        }
+        
+        .chart-number {
+            display: inline-block;
+            background: #0f3460;
+            color: white;
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            line-height: 32px;
+            font-weight: 600;
+            margin-right: 12px;
+            font-size: 0.95em;
+        }
+        
+        .chart-card p {
+            color: #5a6c7d;
+            margin-bottom: 20px;
+            font-size: 1em;
+        }
+        
+        .config-badge {
+            display: inline-block;
+            background: #f5f7fa;
+            color: #5a6c7d;
+            padding: 6px 14px;
+            font-size: 0.85em;
+            margin: 5px 8px 5px 0;
+            font-weight: 500;
+            border: 1px solid #e1e8ed;
+        }
+        
+        .config-badge.new {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border-color: #c8e6c9;
+        }
+        
+        .config-badge.comparison {
+            background: #fff3e0;
+            color: #e65100;
+            border-color: #ffe0b2;
+        }
+        
+        .view-arrow {
+            display: inline-block;
+            color: #0f3460;
+            font-weight: 500;
+            margin-top: 15px;
+            font-size: 0.95em;
+            transition: transform 0.3s ease;
+        }
+        
+        .chart-card:hover .view-arrow {
+            transform: translateX(5px);
+        }
+        
+        footer {
+            background: #1a1a2e;
+            padding: 40px;
+            text-align: center;
+            color: #ffffff;
+            border-top: 4px solid #0f3460;
+        }
+        
+        footer p {
+            opacity: 0.85;
+            margin-bottom: 8px;
+        }
+        
+        footer strong {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MaskFeat Training Analysis</h1>
+            <p>Interactive Visualization of Model Training Performance</p>
+        </header>
+        
+        <div class="content">
+            <div class="intro">
+                <h2>Overview</h2>
+                <p>
+                    This dashboard presents a comprehensive analysis of MaskFeat model training across different configurations. 
+                    Compare the performance of different warmup epochs and batch sizes, track validation accuracy, 
+                    and explore projected outcomes through interactive charts.
+                </p>
+                <p>
+                    <strong>Key Findings:</strong> The new configuration (5 warmup epochs, batch size 512) demonstrates superior 
+                    generalization with a mean gap of 1.24%, representing a significant improvement in model performance 
+                    and training efficiency.
+                </p>
+            </div>
+            
+            <div class="charts-section">
+                <h2>Training Performance Analysis</h2>
+            
+                <div class="charts-grid">
+                    <a href="1_old_run_20warmup_bs128_interactive.html" class="chart-card">
+                        <h3><span class="chart-number">1</span>Baseline Configuration</h3>
+                        <p>Training data through epoch 75 with original hyperparameters and warmup schedule</p>
+                        <span class="config-badge">20 Warmup Epochs</span>
+                        <span class="config-badge">Batch Size 128</span>
+                        <span class="config-badge">Mean Gap: 1.15%</span>
+                        <div class="view-arrow">View Interactive Chart →</div>
+                    </a>
+                    
+                    <a href="2_old_run_20warmup_bs128_extended_ep100_interactive.html" class="chart-card">
+                        <h3><span class="chart-number">2</span>Extended Training Run</h3>
+                        <p>Complete training trajectory extended to epoch 100 with full convergence analysis</p>
+                        <span class="config-badge">20 Warmup Epochs</span>
+                        <span class="config-badge">Batch Size 128</span>
+                        <span class="config-badge">Mean Gap: 3.78%</span>
+                        <div class="view-arrow">View Interactive Chart →</div>
+                    </a>
+                    
+                    <a href="3_new_run_5warmup_bs512_interactive.html" class="chart-card">
+                        <h3><span class="chart-number">3</span>Optimized Configuration</h3>
+                        <p>Enhanced training setup with improved generalization and training efficiency</p>
+                        <span class="config-badge new">5 Warmup Epochs</span>
+                        <span class="config-badge new">Batch Size 512</span>
+                        <span class="config-badge new">Mean Gap: 1.24%</span>
+                        <div class="view-arrow">View Interactive Chart →</div>
+                    </a>
+                    
+                    <a href="4_comparison_old_vs_new_runs_interactive.html" class="chart-card">
+                        <h3><span class="chart-number">4</span>Comparative Analysis</h3>
+                        <p>Direct comparison of baseline and optimized configurations with performance metrics</p>
+                        <span class="config-badge comparison">Configuration Comparison</span>
+                        <span class="config-badge comparison">Performance Metrics</span>
+                        <div class="view-arrow">View Interactive Chart →</div>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <footer>
+            <p><strong>MaskFeat Training Analysis</strong></p>
+            <p style="margin-top: 8px;">
+                Interactive visualizations powered by Plotly with hover tooltips, zoom, and pan capabilities
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
