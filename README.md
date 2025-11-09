@@ -4,9 +4,9 @@ This repository contains interactive visualizations of MaskFeat model training p
 
 ## 🌐 Live Demo
 
-Once deployed, your dashboard will be available at:
+Please visit:
 ```
-https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/
+[https://musicamatics.github.io/maskfeat-analysis/]
 ```
 
 ## 📁 Files Included
