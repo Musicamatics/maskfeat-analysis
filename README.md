@@ -9,34 +9,34 @@ View the dashboard at: [https://musicamatics.github.io/maskfeat-analysis/](https
 ## 📁 Files Included
 
 - `index.html` - Main dashboard landing page
-- `1_old_run_20warmup_bs128_interactive.html` - Chart 1: Baseline configuration
-- `2_old_run_20warmup_bs128_extended_ep100_interactive.html` - Chart 2: Extended training run
-- `3_new_run_5warmup_bs512_interactive.html` - Chart 3: Optimized configuration
-- `4_comparison_old_vs_new_runs_interactive.html` - Chart 4: Comparative analysis
+- `1_old_run_20warmup_bs128_interactive.html` - Chart 1: ViT-B old run (epochs 1-75)
+- `2_old_run_20warmup_bs128_extended_ep100_interactive.html` - Chart 2: ViT-B old run (complete 100 epochs)
+- `3_new_run_5warmup_bs512_interactive.html` - Chart 3: ViT-B new run (epochs 1-50)
+- `4_comparison_old_vs_new_runs_interactive.html` - Chart 4: ViT-B old vs new comparison
 - `5_vitl_run_5warmup_bs192_interactive.html` - Chart 5: ViT-L performance
 - `6_three_way_comparison_vitb_vitl_interactive.html` - Chart 6: ViT-B vs ViT-L comparison
 
 ## 📊 What's Included in the Dashboard
 
-### Chart 1: Old Run (Baseline)
+### Chart 1: ViT-B Old Run (Epochs 1-75)
 - Configuration: 20 warmup epochs, batch size 128
-- Data through epoch 75
+- Initial training phase showing early convergence patterns
 - Mean gap: 1.15%
 
-### Chart 2: Old Run Extended
-- Same configuration extended to epoch 100
-- Complete training trajectory
+### Chart 2: ViT-B Old Run (Complete 100 Epochs)
+- Configuration: 20 warmup epochs, batch size 128
+- Full training trajectory through 100 epochs
 - Mean gap: 3.78%
 
-### Chart 3: New Run (Optimized)
+### Chart 3: ViT-B New Run (Epochs 1-50)
 - Configuration: 5 warmup epochs, batch size 512
-- Improved generalization performance
+- Optimized training showing improved efficiency
 - Mean gap: 1.24%
 
-### Chart 4: Side-by-Side Comparison
-- Direct comparison of old vs new ViT-B configurations
+### Chart 4: ViT-B: Old vs New Comparison
+- Side-by-side comparison of both ViT-B configurations
+- Complete data through 100 epochs for both runs
 - Color-coded traces for easy distinction
-- Configuration details in top-right boxes
 
 ### Chart 5: ViT-L Performance
 - Configuration: 5 warmup epochs, batch size 192
