@@ -156,6 +156,12 @@
             border-color: #ffe0b2;
         }
         
+        .config-badge.vitl {
+            background: #f3e5f5;
+            color: #6a1b9a;
+            border-color: #e1bee7;
+        }
+        
         .view-arrow {
             display: inline-block;
             color: #0f3460;
@@ -198,14 +204,14 @@
             <div class="intro">
                 <h2>Overview</h2>
                 <p>
-                    This dashboard presents a comprehensive analysis of MaskFeat model training across different configurations. 
-                    Compare the performance of different warmup epochs and batch sizes, track validation accuracy, 
+                    This dashboard presents a comprehensive analysis of MaskFeat model training across different configurations and architectures. 
+                    Compare the performance of different warmup epochs and batch sizes, track validation accuracy across ViT-B and ViT-L models, 
                     and explore projected outcomes through interactive charts.
                 </p>
                 <p>
-                    <strong>Key Findings:</strong> The new configuration (5 warmup epochs, batch size 512) demonstrates superior 
-                    generalization with a mean gap of 1.24%, representing a significant improvement in model performance 
-                    and training efficiency.
+                    <strong>Key Findings:</strong> The optimized ViT-B configuration (5 warmup epochs, batch size 512) demonstrates superior 
+                    generalization with a mean gap of 1.24%. ViT-L achieves 18.44% validation error at epoch 50, showing excellent 
+                    convergence and approaching the 14.3% target, demonstrating the power of larger models with efficient training.
                 </p>
             </div>
             
@@ -245,6 +251,15 @@
                         <p>Direct comparison of baseline and optimized configurations with performance metrics</p>
                         <span class="config-badge comparison">Configuration Comparison</span>
                         <span class="config-badge comparison">Performance Metrics</span>
+                        <div class="view-arrow">View Interactive Chart →</div>
+                    </a>
+                    
+                    <a href="5_three_way_comparison_vitb_vitl_interactive.html" class="chart-card">
+                        <h3><span class="chart-number">5</span>ViT-B vs ViT-L Comparison</h3>
+                        <p>Three-way comparison showcasing ViT-B baseline, optimized ViT-B, and ViT-L performance across 100 epochs</p>
+                        <span class="config-badge vitl">ViT-B Models</span>
+                        <span class="config-badge vitl">ViT-L Model (50 epochs)</span>
+                        <span class="config-badge vitl">Architecture Comparison</span>
                         <div class="view-arrow">View Interactive Chart →</div>
                     </a>
                 </div>
